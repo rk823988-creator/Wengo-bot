@@ -1,0 +1,24 @@
+name: WinGo Data Bot
+
+on:
+  schedule:
+    - cron: '*/5 * * * *' # Har 5 minute me chalega
+  workflow_dispatch: # Manual chalanay ke liye button
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      - name: Install dependencies
+        run: pip install requests
+      - name: Run script
+        env:
+          TOKEN: ${{ secrets.TOKEN }}
+          AR_TOKEN: ${{ secrets.AR_TOKEN }}
+        run: python main.py
