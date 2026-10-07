@@ -14,8 +14,8 @@ SUPABASE_KEY = os.getenv("SUPABASE_KEY")
 # Supabase client banao
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
-# API URL
-url = "https://ok888.win/WinGo/WinGo_30S/GetHistoryIssuePage.json"
+# API URL (1 Minute wala - Naya URL)
+url = "https://draw.ar-lottery01.com/WinGo/WinGo_1M/GetHistoryIssuePage.json"
 
 params = {"ts": int(time.time() * 1000)}
 
@@ -24,7 +24,7 @@ headers = {
     "Authorization": f"Bearer {TOKEN}",
     "ar-token": AR_TOKEN,
     "Accept": "application/json, text/plain, */*",
-    "Referer": "https://ok888.win/WinGo/WinGo_30S"
+    "Referer": "https://draw.ar-lottery01.com/WinGo/WinGo_1M"
 }
 
 # API call
